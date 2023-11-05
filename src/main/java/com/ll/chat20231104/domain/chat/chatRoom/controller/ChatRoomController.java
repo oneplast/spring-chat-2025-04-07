@@ -18,8 +18,12 @@ public class ChatRoomController {
     @GetMapping("/{roomId}")
     public String showRoom(
             @PathVariable final long roomId,
-            @RequestParam(defaultValue = "NoName") final String writerName
+            final String writerName,
+            Model model
     ) {
+        ChatRoom room = chatRoomService.findById(roomId).get();
+        model.addAttribute("room", room);
+
         return "domain/chat/chatRoom/room";
     }
 
@@ -43,5 +47,16 @@ public class ChatRoomController {
         model.addAttribute("chatRooms", chatRooms);
 
         return "domain/chat/chatRoom/list";
+    }
+
+    @PostMapping("/{roomId}/write")
+    public String write(
+            @PathVariable final long roomId,
+            final String writerName,
+            final String content
+    ) {
+        chatRoomService.write(roomId, writerName, content);
+
+        return "redirect:/chat/room/" + roomId;
     }
 }
