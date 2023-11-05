@@ -27,7 +27,7 @@ public class ChatRoom extends BaseEntity {
     @ToString.Exclude
     private List<ChatMessage> chatMessages = new ArrayList<>();
 
-    public void writeMessage(String writerName, String content) {
+    public ChatMessage writeMessage(String writerName, String content) {
         ChatMessage chatMessage = ChatMessage
                 .builder()
                 .chatRoom(this)
@@ -36,5 +36,7 @@ public class ChatRoom extends BaseEntity {
                 .build();
 
         chatMessages.add(chatMessage);
+
+        return chatMessage;
     }
 }

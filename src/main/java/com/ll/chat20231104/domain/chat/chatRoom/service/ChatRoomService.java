@@ -1,5 +1,6 @@
 package com.ll.chat20231104.domain.chat.chatRoom.service;
 
+import com.ll.chat20231104.domain.chat.chatRoom.entity.ChatMessage;
 import com.ll.chat20231104.domain.chat.chatRoom.entity.ChatRoom;
 import com.ll.chat20231104.domain.chat.chatRoom.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
@@ -30,10 +31,12 @@ public class ChatRoomService {
     }
 
     @Transactional
-    public void write(long roomId, String writerName, String content) {
+    public ChatMessage write(long roomId, String writerName, String content) {
         ChatRoom chatRoom = chatRoomRepository.findById(roomId).get();
 
-        chatRoom.writeMessage(writerName, content);
+        ChatMessage chatMessage = chatRoom.writeMessage(writerName, content);
+
+        return chatMessage;
     }
 
     public Optional<ChatRoom> findById(long roomId) {
