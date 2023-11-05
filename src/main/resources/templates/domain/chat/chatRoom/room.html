@@ -9,6 +9,7 @@
 
 <script th:inline="javascript">
     const roomId = /*[[${roomId}]]*/ 0;
+    const lastChatMessageId = /*[[${room.chatMessages.size > 0 ? room.chatMessages.first.id : 0}]]*/ 0;
 </script>
 
 <script>
@@ -48,14 +49,32 @@
             response => response.json()
         ).then(
             json => {
-                if ( json.msg ) alert(json.msg);
-
-                document.write(json.data.chatMessageId + '번 메세지가 생성됨');
+                // 아무 작업도 하지 않아도 됩니다.
             }
         ).catch(error => alert(error));
 
         form.content.value = '';
         form.content.focus();
+    }
+
+    function loadMoreChatMessages() {
+        const action = `/chat/room/${roomId}/messagesAfter/${lastChatMessageId}`;
+
+        fetch(
+            action,
+            {
+                method: 'GET',
+                headers: {
+                    'accept': 'application/json'
+                }
+            }
+        ).then(
+            response => response.json()
+        ).then(
+            json => {
+
+            }
+        ).catch(error => alert(error));
     }
 </script>
 
@@ -66,6 +85,9 @@
 </form>
 
 <div>
+    <div>
+        <button onclick="loadMoreChatMessages();" type="button">더 불러오기</button>
+    </div>
     <ul>
         <li th:each="chatMessage : ${room.chatMessages}">
             <span th:text="${chatMessage.writerName}"></span>

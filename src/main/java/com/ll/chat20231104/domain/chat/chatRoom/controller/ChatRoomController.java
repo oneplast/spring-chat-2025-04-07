@@ -77,4 +77,19 @@ public class ChatRoomController {
 
         return RsData.of("S-1", "%d번 메시지를 작성하였습니다.".formatted(chatMessage.getId()), new WriteResponseBody(chatMessage.getId()));
     }
+
+    @Getter
+    @AllArgsConstructor
+    public static class GetMessagesAfterResponseBody {
+
+    }
+
+    @PostMapping("/{roomId}/messagesAfter/{fromChatMessageId}")
+    @ResponseBody
+    public RsData<GetMessagesAfterResponseBody> getMessagesAfter(
+            @PathVariable final long roomId,
+            @PathVariable final long fromChatMessageId
+    ) {
+        return null;
+    }
 }
