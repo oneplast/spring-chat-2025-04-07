@@ -32,6 +32,9 @@ dependencies {
     // 웹 MVC
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    // 웹소켓, STOMP
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
     // 템플릿
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
