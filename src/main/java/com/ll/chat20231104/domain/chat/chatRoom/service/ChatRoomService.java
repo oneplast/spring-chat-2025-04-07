@@ -1,6 +1,6 @@
 package com.ll.chat20231104.domain.chat.chatRoom.service;
 
-import com.ll.chat20231104.domain.chat.chatRoom.entity.ChatMessage;
+import com.ll.chat20231104.domain.chat.chatMessage.entity.ChatMessage;
 import com.ll.chat20231104.domain.chat.chatRoom.entity.ChatRoom;
 import com.ll.chat20231104.domain.chat.chatRoom.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;

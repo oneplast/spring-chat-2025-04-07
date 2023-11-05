@@ -1,5 +1,6 @@
-package com.ll.chat20231104.domain.chat.chatRoom.entity;
+package com.ll.chat20231104.domain.chat.chatMessage.entity;
 
+import com.ll.chat20231104.domain.chat.chatRoom.entity.ChatRoom;
 import com.ll.chat20231104.global.jpa.BaseEntity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;

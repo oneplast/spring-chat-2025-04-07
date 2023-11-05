@@ -1,5 +1,8 @@
 package com.ll.chat20231104.domain.chat.chatRoom.entity;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ll.chat20231104.domain.chat.chatMessage.entity.ChatMessage;
 import com.ll.chat20231104.global.jpa.BaseEntity.BaseEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -27,6 +30,7 @@ public class ChatRoom extends BaseEntity {
     @Builder.Default
     @ToString.Exclude
     @OrderBy("id DESC")
+    @JsonIgnore
     private List<ChatMessage> chatMessages = new ArrayList<>();
 
     public ChatMessage writeMessage(String writerName, String content) {
