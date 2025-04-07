@@ -1,4 +1,4 @@
-package com.ll.chat20231104.global.rsData;
+package com.ll.chat.global.rsData;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

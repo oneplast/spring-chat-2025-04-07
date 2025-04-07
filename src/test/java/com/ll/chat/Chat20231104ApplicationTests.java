@@ -1,10 +1,10 @@
-package com.ll.chat20231104;
+package com.ll.chat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Chat20231104ApplicationTests {
+class chatApplicationTests {
 
     @Test
     void contextLoads() {

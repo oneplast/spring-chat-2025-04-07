@@ -1,6 +1,8 @@
 server:
   port: 8082
 spring:
+  application:
+    name: spring-chat-2025-04-07
   thymeleaf:
     cache: false
     prefix: file:src/main/resources/templates/

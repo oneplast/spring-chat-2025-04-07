@@ -1,4 +1,4 @@
-package com.ll.chat20231104.domain.home.main.controller;
+package com.ll.chat.domain.home.main.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
