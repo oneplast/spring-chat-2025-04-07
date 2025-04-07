@@ -1,9 +1,8 @@
 package com.ll.chat.global.rsData;
 
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.util.Optional;
 
 @Getter
 @AllArgsConstructor(access = lombok.AccessLevel.PRIVATE)
